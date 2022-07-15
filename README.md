@@ -1,11 +1,11 @@
-[![Packagist](https://img.shields.io/packagist/v/Invenso/php-microsoft-jwt?style=for-the-badge)](https://packagist.org/packages/Invenso/php-microsoft-jwt)
-[![GitHub](https://img.shields.io/github/v/release/Invenso/php-microsoft-jwt?label=GitHub&style=for-the-badge)](https://github.com/Invenso/php-microsoft-jwt)
-[![Test](https://img.shields.io/github/workflow/status/Invenso/php-microsoft-jwt/PHP%20Test?label=TEST&style=for-the-badge)](https://github.com/Invenso/php-microsoft-jwt)
-[![Coverage Status](https://img.shields.io/coveralls/github/Invenso/php-microsoft-jwt/master?style=for-the-badge)](https://coveralls.io/github/Invenso/php-microsoft-jwt?branch=master)
-[![GitHub license](https://img.shields.io/github/license/Invenso/php-microsoft-jwt?color=green&style=for-the-badge)](https://github.com/Invenso/php-microsoft-jwt/blob/master/LICENCE)  
+[![Packagist](https://img.shields.io/packagist/v/InvensoGroup/microsoft-jwt?style=for-the-badge)](https://packagist.org/packages/InvensoGroup/microsoft-jwt)
+[![GitHub](https://img.shields.io/github/v/release/InvensoGroup/microsoft-jwt?label=GitHub&style=for-the-badge)](https://github.com/InvensoGroup/microsoft-jwt)
+[![Test](https://img.shields.io/github/workflow/status/InvensoGroup/microsoft-jwt/PHP%20Test?label=TEST&style=for-the-badge)](https://github.com/InvensoGroup/microsoft-jwt)
+[![Coverage Status](https://img.shields.io/coveralls/github/InvensoGroup/microsoft-jwt/master?style=for-the-badge)](https://coveralls.io/github/InvensoGroup/microsoft-jwt?branch=master)
+[![GitHub license](https://img.shields.io/github/license/InvensoGroup/microsoft-jwt?color=green&style=for-the-badge)](https://github.com/InvensoGroup/microsoft-jwt/blob/master/LICENCE)  
 [![firebase/php-jwt Version](https://img.shields.io/static/v1?label=firebase%2Fphp-jwt&message=5.2.0&color=blue&style=for-the-badge)](https://github.com/firebase/php-jwt/tree/v5.2.0)
 
-# php-microsoft-jwt
+# microsoft-jwt
 
 A simple library to validate and decode Microsoft Azure Active Directory ([Azure AD](https://docs.microsoft.com/en-us/azure/active-directory/develop/v2-app-types)), Microsoft Active Directory Federation Services (ADFS) JSON Web Tokens (JWT) in PHP, conforming to [RFC 7519](https://tools.ietf.org/html/rfc7519).
 
@@ -15,10 +15,10 @@ Multitenant support
 
 ## Installation
 
-Use composer to manage your dependencies and download php-microsoft-jwt:
+Use composer to manage your dependencies and download microsoft-jwt:
 
 ```bash
-composer require Invenso/php-microsoft-jwt
+composer require Invenso/microsoft-jwt
 ```
 
 ## Example

@@ -1,7 +1,7 @@
 {
-  "name": "invenso/php-microsoft-jwt",
+  "name": "invenso/microsoft-jwt",
   "description": "A simple library to validate and decode Microsoft Azure Active Directory (Azure AD), Microsoft Active Directory Federation Services (ADFS) JSON Web Tokens (JWT) in PHP, conforming to RFC 7519",
-  "homepage": "https://github.com/InvensoGroup/php-microsoft-jwt",
+  "homepage": "https://github.com/InvensoGroup/microsoft-jwt",
   "keywords": [
     "php",
     "jwt",

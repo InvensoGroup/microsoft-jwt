@@ -1,11 +1,11 @@
 <?php
 
-namespace Alancting\Microsoft\Tests;
+namespace Invenso\Microsoft\Tests;
 
 use ArrayObject;
 use PHPUnit\Framework\TestCase;
 
-use Alancting\Microsoft\JWT\JWT;
+use Invenso\Microsoft\JWT\JWT;
 
 class JWTTest extends TestCase
 {
@@ -56,7 +56,7 @@ class JWTTest extends TestCase
 
     public function testExpiredToken()
     {
-        $this->setExpectedException('Alancting\Microsoft\JWT\ExpiredException');
+        $this->setExpectedException('Invenso\Microsoft\JWT\ExpiredException');
         $payload = [
             'message' => 'abc',
             'exp' => time() - 20, ]; // time in the past
@@ -66,7 +66,7 @@ class JWTTest extends TestCase
 
     public function testBeforeValidTokenWithNbf()
     {
-        $this->setExpectedException('Alancting\Microsoft\JWT\BeforeValidException');
+        $this->setExpectedException('Invenso\Microsoft\JWT\BeforeValidException');
         $payload = [
             'message' => 'abc',
             'nbf' => time() + 20, ]; // time in the future
@@ -76,7 +76,7 @@ class JWTTest extends TestCase
 
     public function testBeforeValidTokenWithIat()
     {
-        $this->setExpectedException('Alancting\Microsoft\JWT\BeforeValidException');
+        $this->setExpectedException('Invenso\Microsoft\JWT\BeforeValidException');
         $payload = [
             'message' => 'abc',
             'iat' => time() + 20, ]; // time in the future
@@ -112,7 +112,7 @@ class JWTTest extends TestCase
         $payload = [
             'message' => 'abc',
             'exp' => time() - 70, ]; // time far in the past
-        $this->setExpectedException('Alancting\Microsoft\JWT\ExpiredException');
+        $this->setExpectedException('Invenso\Microsoft\JWT\ExpiredException');
         $encoded = JWT::encode($payload, 'my_key');
         $decoded = JWT::decode($encoded, 'my_key', ['HS256']);
         $this->assertEquals($decoded->message, 'abc');
@@ -160,7 +160,7 @@ class JWTTest extends TestCase
             'message' => 'abc',
             'nbf'     => time() + 65, ]; // not before too far in future
         $encoded = JWT::encode($payload, 'my_key');
-        $this->setExpectedException('Alancting\Microsoft\JWT\BeforeValidException');
+        $this->setExpectedException('Invenso\Microsoft\JWT\BeforeValidException');
         JWT::decode($encoded, 'my_key', ['HS256']);
         JWT::$leeway = 0;
     }
@@ -184,7 +184,7 @@ class JWTTest extends TestCase
             'message' => 'abc',
             'iat'     => time() + 65, ]; // issued too far in future
         $encoded = JWT::encode($payload, 'my_key');
-        $this->setExpectedException('Alancting\Microsoft\JWT\BeforeValidException');
+        $this->setExpectedException('Invenso\Microsoft\JWT\BeforeValidException');
         JWT::decode($encoded, 'my_key', ['HS256']);
         JWT::$leeway = 0;
     }
@@ -195,7 +195,7 @@ class JWTTest extends TestCase
             'message' => 'abc',
             'exp' => time() + 20, ]; // time in the future
         $encoded = JWT::encode($payload, 'my_key');
-        $this->setExpectedException('Alancting\Microsoft\JWT\SignatureInvalidException');
+        $this->setExpectedException('Invenso\Microsoft\JWT\SignatureInvalidException');
         JWT::decode($encoded, 'my_key2', ['HS256']);
     }
 

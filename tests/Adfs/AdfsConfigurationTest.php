@@ -1,14 +1,14 @@
 <?php
 
-namespace Alancting\Microsoft\Tests\Adfs;
+namespace Invenso\Microsoft\Tests\Adfs;
 
 use Mockery\Adapter\Phpunit\MockeryTestCase;
 use \Mockery;
 
 use Symfony\Component\Cache\CacheItem;
 
-use Alancting\Microsoft\JWT\Base\MicrosoftConfiguration;
-use Alancting\Microsoft\JWT\Adfs\AdfsConfiguration;
+use Invenso\Microsoft\JWT\Base\MicrosoftConfiguration;
+use Invenso\Microsoft\JWT\Adfs\AdfsConfiguration;
 
 class AdfsConfigurationTest extends MockeryTestCase
 {

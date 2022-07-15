@@ -1,14 +1,14 @@
 <?php
 
-namespace Alancting\Microsoft\Tests\AzureAd;
+namespace Invenso\Microsoft\Tests\AzureAd;
 
 use Mockery\Adapter\Phpunit\MockeryTestCase;
 use \Mockery;
 
 use Symfony\Component\Cache\CacheItem;
 
-use Alancting\Microsoft\JWT\Base\MicrosoftConfiguration;
-use Alancting\Microsoft\JWT\AzureAd\AzureAdConfiguration;
+use Invenso\Microsoft\JWT\Base\MicrosoftConfiguration;
+use Invenso\Microsoft\JWT\AzureAd\AzureAdConfiguration;
 
 class AzureAdConfigurationTest extends MockeryTestCase
 {

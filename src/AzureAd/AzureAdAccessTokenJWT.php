@@ -1,8 +1,8 @@
 <?php
 
-namespace Alancting\Microsoft\JWT\AzureAd;
+namespace Invenso\Microsoft\JWT\AzureAd;
 
-use Alancting\Microsoft\JWT\Base\MicrosoftAccessTokenJWT;
+use Invenso\Microsoft\JWT\Base\MicrosoftAccessTokenJWT;
 
 class AzureAdAccessTokenJWT extends MicrosoftAccessTokenJWT
 {

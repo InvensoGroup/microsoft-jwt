@@ -1,6 +1,6 @@
 <?php
 
-namespace Alancting\Microsoft\JWT;
+namespace Invenso\Microsoft\JWT;
 
 class BeforeValidException extends \UnexpectedValueException
 {

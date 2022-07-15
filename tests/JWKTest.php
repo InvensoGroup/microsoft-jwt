@@ -1,11 +1,11 @@
 <?php
 
-namespace Alancting\Microsoft\Tests;
+namespace Invenso\Microsoft\Tests;
 
 use PHPUnit\Framework\TestCase;
 
-use Alancting\Microsoft\JWT\JWT;
-use Alancting\Microsoft\JWT\JWK;
+use Invenso\Microsoft\JWT\JWT;
+use Invenso\Microsoft\JWT\JWK;
 
 class JWKTest extends TestCase
 {
@@ -56,7 +56,7 @@ class JWKTest extends TestCase
         $payload = ['exp' => strtotime('-1 hour')];
         $msg = JWT::encode($payload, $privKey1, 'RS256', 'jwk1');
 
-        $this->setExpectedException('Alancting\Microsoft\JWT\ExpiredException');
+        $this->setExpectedException('Invenso\Microsoft\JWT\ExpiredException');
 
         JWT::decode($msg, self::$keys, ['RS256']);
     }

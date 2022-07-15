@@ -1,13 +1,13 @@
 <?php
 
-namespace Alancting\Microsoft\Tests\Adfs;
+namespace Invenso\Microsoft\Tests\Adfs;
 
 use PHPUnit\Framework\TestCase;
-use Alancting\Microsoft\JWT\Adfs\AdfsConfiguration;
-use Alancting\Microsoft\JWT\Adfs\AdfsAccessTokenJWT;
+use Invenso\Microsoft\JWT\Adfs\AdfsConfiguration;
+use Invenso\Microsoft\JWT\Adfs\AdfsAccessTokenJWT;
 
-use Alancting\Microsoft\JWT\JWT;
-use Alancting\Microsoft\JWT\JWK;
+use Invenso\Microsoft\JWT\JWT;
+use Invenso\Microsoft\JWT\JWK;
 
 class AdfsAccessTokenJWTTest extends TestCase
 {

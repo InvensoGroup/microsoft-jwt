@@ -1,8 +1,8 @@
 <?php
 
-namespace Alancting\Microsoft\JWT\Base;
+namespace Invenso\Microsoft\JWT\Base;
 
-use Alancting\Microsoft\JWT\JWK;
+use Invenso\Microsoft\JWT\JWK;
 use Symfony\Component\Cache\Adapter\FilesystemAdapter;
 use Symfony\Component\Cache\Adapter\RedisAdapter;
 use Symfony\Component\Cache\Adapter\MemcachedAdapter;

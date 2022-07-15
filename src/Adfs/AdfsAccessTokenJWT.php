@@ -1,8 +1,8 @@
 <?php
 
-namespace Alancting\Microsoft\JWT\Adfs;
+namespace Invenso\Microsoft\JWT\Adfs;
 
-use Alancting\Microsoft\JWT\Base\MicrosoftAccessTokenJWT;
+use Invenso\Microsoft\JWT\Base\MicrosoftAccessTokenJWT;
 
 class AdfsAccessTokenJWT extends MicrosoftAccessTokenJWT
 {

@@ -1,8 +1,8 @@
 <?php
 
-namespace Alancting\Microsoft\JWT\Base;
+namespace Invenso\Microsoft\JWT\Base;
 
-use Alancting\Microsoft\JWT\JWT;
+use Invenso\Microsoft\JWT\JWT;
 use \UnexpectedValueException;
 
 abstract class MicrosoftJWT

@@ -1,8 +1,8 @@
 <?php
 
-namespace Alancting\Microsoft\Tests;
+namespace Invenso\Microsoft\Tests;
 
-use Alancting\Microsoft\JWT\JWT;
+use Invenso\Microsoft\JWT\JWT;
 
 class JWTExtrasTest extends JWTTest
 {

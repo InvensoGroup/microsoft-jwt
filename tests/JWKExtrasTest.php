@@ -1,8 +1,8 @@
 <?php
 
-namespace Alancting\Microsoft\Tests;
+namespace Invenso\Microsoft\Tests;
 
-use Alancting\Microsoft\JWT\JWK;
+use Invenso\Microsoft\JWT\JWK;
 
 class JWKExtrasTest extends JWKTest
 {

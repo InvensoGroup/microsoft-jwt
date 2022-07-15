@@ -1,8 +1,8 @@
 <?php
 
-namespace Alancting\Microsoft\JWT\AzureAd;
+namespace Invenso\Microsoft\JWT\AzureAd;
 
-use Alancting\Microsoft\JWT\Base\MicrosoftConfiguration;
+use Invenso\Microsoft\JWT\Base\MicrosoftConfiguration;
 use \UnexpectedValueException;
 
 /**

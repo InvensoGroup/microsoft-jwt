@@ -1,6 +1,6 @@
 <?php
 
-namespace Alancting\Microsoft\JWT\Base;
+namespace Invenso\Microsoft\JWT\Base;
 
 abstract class MicrosoftAccessTokenJWT extends MicrosoftJWT
 {

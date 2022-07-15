@@ -1,6 +1,6 @@
 <?php
 
-namespace Alancting\Microsoft\JWT;
+namespace Invenso\Microsoft\JWT;
 
 use DomainException;
 use UnexpectedValueException;

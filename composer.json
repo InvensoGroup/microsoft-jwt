@@ -1,7 +1,7 @@
 {
-  "name": "alancting/php-microsoft-jwt",
+  "name": "invenso/php-microsoft-jwt",
   "description": "A simple library to validate and decode Microsoft Azure Active Directory (Azure AD), Microsoft Active Directory Federation Services (ADFS) JSON Web Tokens (JWT) in PHP, conforming to RFC 7519",
-  "homepage": "https://github.com/alancting/php-microsoft-jwt",
+  "homepage": "https://github.com/InvensoGroup/php-microsoft-jwt",
   "keywords": [
     "php",
     "jwt",
@@ -11,9 +11,13 @@
     "ad",
     "microsoft"
   ],
-  "version": "1.2.1",
+  "version": "1.2.2",
   "authors": [
     {
+      "name": "Jeroen Aalders",
+      "email": "jeroen.aalders@invenso.nl",
+      "role": "Developer"
+    }, {
       "name": "Neuman Vong",
       "email": "neuman+pear@twilio.com",
       "role": "Developer"
@@ -22,8 +26,8 @@
       "email": "anant@php.net",
       "role": "Developer"
     }, {
-      "name": "alancting",
-      "homepage": "https://github.com/alancting"
+      "name": "Invenso",
+      "homepage": "https://github.com/InvensoGroup"
     }
   ],
   "license": "BSD-3-Clause",
@@ -39,12 +43,12 @@
   },
   "autoload": {
     "psr-4": {
-      "Alancting\\Microsoft\\JWT\\": "src/"
+      "Invenso\\Microsoft\\JWT\\": "src/"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "Alancting\\Microsoft\\Tests\\": "tests/"
+      "Invenso\\Microsoft\\Tests\\": "tests/"
     }
   },
   "scripts": {

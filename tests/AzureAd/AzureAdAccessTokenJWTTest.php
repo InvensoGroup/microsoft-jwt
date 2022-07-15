@@ -1,13 +1,13 @@
 <?php
 
-namespace Alancting\Microsoft\Tests\AzureAd;
+namespace Invenso\Microsoft\Tests\AzureAd;
 
 use PHPUnit\Framework\TestCase;
-use Alancting\Microsoft\JWT\AzureAd\AzureAdConfiguration;
-use Alancting\Microsoft\JWT\AzureAd\AzureAdAccessTokenJWT;
+use Invenso\Microsoft\JWT\AzureAd\AzureAdConfiguration;
+use Invenso\Microsoft\JWT\AzureAd\AzureAdAccessTokenJWT;
 
-use Alancting\Microsoft\JWT\JWT;
-use Alancting\Microsoft\JWT\JWK;
+use Invenso\Microsoft\JWT\JWT;
+use Invenso\Microsoft\JWT\JWK;
 
 class AzureAdAccessTokenJWTTest extends TestCase
 {

@@ -1,13 +1,15 @@
-[![Packagist](https://img.shields.io/packagist/v/alancting/php-microsoft-jwt?style=for-the-badge)](https://packagist.org/packages/alancting/php-microsoft-jwt)
-[![GitHub](https://img.shields.io/github/v/release/alancting/php-microsoft-jwt?label=GitHub&style=for-the-badge)](https://github.com/alancting/php-microsoft-jwt)
-[![Test](https://img.shields.io/github/workflow/status/alancting/php-microsoft-jwt/PHP%20Test?label=TEST&style=for-the-badge)](https://github.com/alancting/php-microsoft-jwt)
-[![Coverage Status](https://img.shields.io/coveralls/github/alancting/php-microsoft-jwt/master?style=for-the-badge)](https://coveralls.io/github/alancting/php-microsoft-jwt?branch=master)
-[![GitHub license](https://img.shields.io/github/license/alancting/php-microsoft-jwt?color=green&style=for-the-badge)](https://github.com/alancting/php-microsoft-jwt/blob/master/LICENCE)  
+[![Packagist](https://img.shields.io/packagist/v/Invenso/php-microsoft-jwt?style=for-the-badge)](https://packagist.org/packages/Invenso/php-microsoft-jwt)
+[![GitHub](https://img.shields.io/github/v/release/Invenso/php-microsoft-jwt?label=GitHub&style=for-the-badge)](https://github.com/Invenso/php-microsoft-jwt)
+[![Test](https://img.shields.io/github/workflow/status/Invenso/php-microsoft-jwt/PHP%20Test?label=TEST&style=for-the-badge)](https://github.com/Invenso/php-microsoft-jwt)
+[![Coverage Status](https://img.shields.io/coveralls/github/Invenso/php-microsoft-jwt/master?style=for-the-badge)](https://coveralls.io/github/Invenso/php-microsoft-jwt?branch=master)
+[![GitHub license](https://img.shields.io/github/license/Invenso/php-microsoft-jwt?color=green&style=for-the-badge)](https://github.com/Invenso/php-microsoft-jwt/blob/master/LICENCE)  
 [![firebase/php-jwt Version](https://img.shields.io/static/v1?label=firebase%2Fphp-jwt&message=5.2.0&color=blue&style=for-the-badge)](https://github.com/firebase/php-jwt/tree/v5.2.0)
 
 # php-microsoft-jwt
 
 A simple library to validate and decode Microsoft Azure Active Directory ([Azure AD](https://docs.microsoft.com/en-us/azure/active-directory/develop/v2-app-types)), Microsoft Active Directory Federation Services (ADFS) JSON Web Tokens (JWT) in PHP, conforming to [RFC 7519](https://tools.ietf.org/html/rfc7519).
+
+Multitenant support
 
 **Forked From [firebase/php-jwt](https://github.com/firebase/php-jwt)**
 
@@ -16,7 +18,7 @@ A simple library to validate and decode Microsoft Azure Active Directory ([Azure
 Use composer to manage your dependencies and download php-microsoft-jwt:
 
 ```bash
-composer require alancting/php-microsoft-jwt
+composer require Invenso/php-microsoft-jwt
 ```
 
 ## Example
@@ -26,9 +28,9 @@ composer require alancting/php-microsoft-jwt
 ```php
 <?php
 
-use Alancting\Microsoft\JWT\Adfs\AdfsConfiguration;
-use Alancting\Microsoft\JWT\Adfs\AdfsAccessTokenJWT;
-use Alancting\Microsoft\JWT\Adfs\AdfsIdTokenJWT;
+use Invenso\Microsoft\JWT\Adfs\AdfsConfiguration;
+use Invenso\Microsoft\JWT\Adfs\AdfsAccessTokenJWT;
+use Invenso\Microsoft\JWT\Adfs\AdfsIdTokenJWT;
 
 ...
 
@@ -92,9 +94,9 @@ echo ($id_token->isExpired()) ? 'Access token is expired' : 'Access token is val
 ```php
 <?php
 
-use Alancting\Microsoft\JWT\AzureAd\AzureAdConfiguration;
-use Alancting\Microsoft\JWT\AzureAd\AzureAdAccessTokenJWT;
-use Alancting\Microsoft\JWT\AzureAd\AzureAdIdTokenJWT;
+use Invenso\Microsoft\JWT\AzureAd\AzureAdConfiguration;
+use Invenso\Microsoft\JWT\AzureAd\AzureAdAccessTokenJWT;
+use Invenso\Microsoft\JWT\AzureAd\AzureAdIdTokenJWT;
 
 ...
 
@@ -103,7 +105,7 @@ use Alancting\Microsoft\JWT\AzureAd\AzureAdIdTokenJWT;
  */
 $config_options = [
   'tenant' => '{tenant_id} | common | organizations | consumers',
-  'tenant_id' => '{tenant_id}',
+  'tenant_id' => '{tenant_id}' | null,
   'client_id' => '{client_id}'
 ];
 
@@ -112,7 +114,7 @@ $config_options = [
  */
 // $config_options = [
 //   'tenant' => '{tenant_id} | common | organizations | consumers',
-//   'tenant_id' => '{tenant_id}',
+//   'tenant_id' => '{tenant_id}' | null, // leave empty when using common | organizations | consumers to support multi-tenant
 //   'client_id' => '{client_id}'
 //   'config_uri' => 'local_path_to_configuration_json',
 // ];

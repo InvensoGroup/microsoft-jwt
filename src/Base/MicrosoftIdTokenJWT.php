@@ -18,4 +18,9 @@ abstract class MicrosoftIdTokenJWT extends MicrosoftJWT
     {
         return $this->getConfiguration()->getClientId();
     }
+
+    protected function getTenant()
+    {
+        return $this->getConfiguration()->getTenant();
+    }
 }

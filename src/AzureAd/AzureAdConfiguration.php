@@ -22,7 +22,7 @@ class AzureAdConfiguration extends MicrosoftConfiguration
             throw new UnexpectedValueException('Missing tenant');
         }
         
-        if (!isset($options['tenant_id'])) {
+        if ($options["tenant"] !== "common" && $options["tenant"] !== "organizations" && $options["tenant"] !== "consumers" && !isset($options['tenant_id'])) {
             throw new UnexpectedValueException('Missing tenant_id');
         }
 

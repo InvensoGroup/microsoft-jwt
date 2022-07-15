@@ -16,6 +16,7 @@ abstract class MicrosoftJWT
     abstract protected function getIssuer();
     abstract protected function getAllowedAlgs();
     abstract protected function getDefaultAudience();
+    abstract protected function getTenant();
 
     public function __construct($configuration, $token, $audience = false, $allowed_algs = [])
     {
@@ -70,7 +71,9 @@ abstract class MicrosoftJWT
         if (!isset($payload->iss)) {
             throw new UnexpectedValueException('Missing issuer');
         }
-        if ($payload->iss !== $this->getIssuer()) {
+
+        $tenant = $this->getTenant();
+        if ($tenant !== "common" && $tenant !== "organizations" && $tenant !== "consumers" && $payload->iss !== $this->getIssuer()) {
             throw new UnexpectedValueException('Invalid issuer: ' . $payload->iss);
         }
     }

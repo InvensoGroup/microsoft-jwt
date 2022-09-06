@@ -13,4 +13,14 @@ abstract class MicrosoftAccessTokenJWT extends MicrosoftJWT
     {
         return $this->getConfiguration()->getTokenEndpointAuthSigingAlgValuesSupported();
     }
+
+    protected function getDefaultAudience()
+    {
+        return $this->getConfiguration()->getClientId();
+    }
+
+    protected function getTenant()
+    {
+        return $this->getConfiguration()->getTenant();
+    }
 }

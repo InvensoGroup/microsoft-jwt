@@ -190,36 +190,46 @@ abstract class MicrosoftConfiguration
     {
         try {
             $this->loaded = false;
-            
+
             if ($this->cache !== false) {
                 $cache_item_configs = $this->cache->getItem(self::CACHE_KEY_CONFIGS);
+                $parsedSuccesfully = false;
                 if (!$cache_item_configs->isHit()) {
                     $cache_item_configs = $this->setCacheFromUrlOrFile(self::CACHE_KEY_CONFIGS, $this->config_uri);
                 } else {
                     try {
                         $this->parseOpenIdConfigsFromJson($cache_item_configs->get());
+                        $parsedSuccesfully = true;
                     } catch (\Exception $e) {
                         $cache_item_configs = $this->setCacheFromUrlOrFile(self::CACHE_KEY_CONFIGS, $this->config_uri);
                     }
                 }
-                $this->parseOpenIdConfigsFromJson($cache_item_configs->get());
+
+                if(!$parsedSuccesfully) {
+                    $this->parseOpenIdConfigsFromJson($cache_item_configs->get());
+                }
             } else {
                 $configs_json = $this->getFromUrlOrFile($this->config_uri);
                 $this->parseOpenIdConfigsFromJson($configs_json);
             }
-            
+
             if ($this->cache !== false) {
                 $cache_item_jwks = $this->cache->getItem(self::CACHE_KEY_JWKS);
+                $jwksParsesSuccessfully = false;
                 if (!$cache_item_jwks->isHit()) {
                     $cache_item_jwks = $this->setCacheFromUrlOrFile(self::CACHE_KEY_JWKS, $this->jwks_uri);
                 } else {
                     try {
                         $this->jwks = $this->getJwkFromJson($cache_item_jwks->get());
+                        $jwksParsesSuccessfully = true;
                     } catch (\Exception $e) {
                         $cache_item_jwks = $this->setCacheFromUrlOrFile(self::CACHE_KEY_JWKS, $this->jwks_uri);
                     }
                 }
-                $this->jwks = $this->getJwkFromJson($cache_item_jwks->get());
+
+                if(!$jwksParsesSuccessfully) {
+                    $this->jwks = $this->getJwkFromJson($cache_item_jwks->get());
+                }
             } else {
                 $jwks_json = $this->getFromUrlOrFile($this->jwks_uri);
                 $this->jwks = $this->getJwkFromJson($jwks_json);
@@ -232,8 +242,7 @@ abstract class MicrosoftConfiguration
     }
 
     private function parseOpenIdConfigsFromJson($config_json) 
-    {   
-        
+    {
         try {
             $data = json_decode($config_json, true);
             if (!array_key_exists('authorization_endpoint', $data) || 

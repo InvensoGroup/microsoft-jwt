@@ -307,3 +307,32 @@ $ composer run test
 ## License
 
 [3-Clause BSD](http://opensource.org/licenses/BSD-3-Clause).
+
+
+## Build options
+
+
+install with docker composer
+
+```bash
+docker run -ti -v ./:/app composer:latest composer install
+```
+
+
+### PHP CS Fix
+
+```bash
+docker run -ti -v ./:/app composer:latest composer php-cs-fix
+```
+
+### PHPstan
+
+```bash
+docker run -ti -v ./:/app composer:latest composer phpstan
+```
+
+### Find deprecations
+
+```bash
+docker run -ti -v ./:/app composer:latest composer outdated
+```
